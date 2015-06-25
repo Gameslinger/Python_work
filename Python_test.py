@@ -15,6 +15,7 @@ def start():
         while i < 31:
             print "You need help!"+str(i)
             i +=1
+    time.sleep(1.5)
 start()
 
 
