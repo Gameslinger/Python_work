@@ -97,7 +97,7 @@ def calc():
     ex = raw_input('Would you like to:\n multiply(*)\n  divide(/)\n  subtract(-)\n add(+)\n or leave(leave)\n')
     if ex == 'leave':
         start()
-    elif ex != '*' or ex != '/' or ex != '-' or ex != '+':
+    elif not (ex == '*' or ex == '/' or ex == '-' or ex == '+'):
         print "sorry didn't catch that!"
         calc()
     no1 = int(raw_input('What is the first number?\n    '))
