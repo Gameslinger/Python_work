@@ -50,7 +50,7 @@ def writing():
         print ""
         print 'It says: "' + f.read() + '"'
         print ''
-        start()
+        return
         
     delete = raw_input("want to delete the file?\n(y,n):     ")
     f.close()
@@ -65,7 +65,7 @@ def game():
     #simple guessing game!
     print "you get 3 chances to guess what I am thinking"
     countto = raw_input("how high do you want me to guess?(not too high!)\n")
-    if int(countto) <= 0:
+    if int(countto) <= 3:
         print ''
         print "That's too small!"
         print ''
@@ -81,22 +81,23 @@ def game():
             print '     !You did it!'
             print ""
             print ""
-            start()
+            return
         else:
             if chances == 1:
                 print 'The number was: '+str(rand)
+                print ''
                 print '--------Game Over--------'
             else:
                 print 'sorry try again!'
             chances -= 1
-    start()
+    
     
 
 def calc():
     #basic calculator!
     ex = raw_input('Would you like to:\n multiply(*)\n  divide(/)\n  subtract(-)\n add(+)\n or leave(leave)\n')
     if ex == 'leave':
-        start()
+        return
     elif not (ex == '*' or ex == '/' or ex == '-' or ex == '+'):
         print "sorry didn't catch that!"
         calc()
@@ -118,7 +119,7 @@ def calc():
     elif ex == '+':
         print no1 + no2
     elif ex == 'leave':
-        start()
+        return
     else:
         print 'Sorry try again'
         calc()
@@ -152,14 +153,10 @@ play a guessing game(game)\n use a calculator(calc)\n  or leave(exit)\n     ")
     print ''
     print ""
     
-    start()
 
 
 #STARTS HERE!!!!
 print "welcome to Gabe's SECOND Python application"
-start()
-
-
-
-
+while(True):
+    start()
 
