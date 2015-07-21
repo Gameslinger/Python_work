@@ -11,11 +11,10 @@ def ask():
     second = raw_input('Hello '+first+", do you like python(yes/no)\n    ")
 
     if (second.lower() == 'yes'):
-        print "you know it!"
-        print '_____\n|0 -|\n| - |'
+        print "you know it! :)"
     elif second == 'no':
         print "SPAM!!!"
-        time.sleep(0.8)
+        time.sleep(0.1)
         i = 1
         while i < 31:
             
@@ -25,9 +24,6 @@ def ask():
     else:
             print 'Sorry didn\'t catch that. '
             ask()
-
-
-
     
 def writing():
     #Writes/reads file
@@ -50,13 +46,13 @@ def writing():
         print ""
         print 'It says: "' + f.read() + '"'
         print ''
-        return
+        writing()
         
     delete = raw_input("want to delete the file?\n(y,n):     ")
     f.close()
     if delete == 'y':
         os.remove(os.path.dirname(__file__)+'\\'+filename+'.txt')
-
+    start()
 
 
 
@@ -81,12 +77,13 @@ def game():
             print '     !You did it!'
             print ""
             print ""
-            return
+            start()
         else:
             if chances == 1:
                 print 'The number was: '+str(rand)
                 print ''
                 print '--------Game Over--------'
+                start()
             else:
                 print 'sorry try again!'
             chances -= 1
@@ -97,7 +94,7 @@ def calc():
     #basic calculator!
     ex = raw_input('Would you like to:\n multiply(*)\n  divide(/)\n  subtract(-)\n add(+)\n or leave(leave)\n')
     if ex == 'leave':
-        return
+        start()
     elif not (ex == '*' or ex == '/' or ex == '-' or ex == '+'):
         print "sorry didn't catch that!"
         calc()
@@ -119,12 +116,12 @@ def calc():
     elif ex == '+':
         print no1 + no2
     elif ex == 'leave':
-        return
+        start()
     else:
         print 'Sorry try again'
         calc()
     print ''
-
+    start()
 
 
 def start():
@@ -152,11 +149,9 @@ play a guessing game(game)\n use a calculator(calc)\n  or leave(exit)\n     ")
         print "sorry didn't catch that"
     print ''
     print ""
-    
+    start()
 
 
 #STARTS HERE!!!!
 print "welcome to Gabe's SECOND Python application"
-while(True):
-    start()
-
+start()
