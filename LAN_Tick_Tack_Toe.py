@@ -1,4 +1,4 @@
-#Tick tack toe multiplayer
+#Tick tack toe multiplayer!
 
 import socket
 import sys
